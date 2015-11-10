@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+    <head>
+    <title>Learning Angular JS</title>
+    <link rel="stylesheet" href="/styles/bootstrap.min.css"> 
+    <link rel="stylesheet" href="/styles/application.css">
+  
+    </head>
+    
+    <body>
+   
+        <div class="container-fluid">
+            <!-- Login Functionality -->
+            
+            <!-- Login End -->
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon" id="sizing-addon1">Customer Details</span></span>
+                <input ng-model="nameText.name" type="text" class="form-control" 
+                       placeholder="Type name to filter" aria-describedby="sizing-addon1">
+                <span class="input-group-addon" id="sizing-addon1">{{nameText.name}}</span>
+            </div>
+           <ng-view></ng-view
+     </div>
+    
+    <script src="/scripts/angular.min.js"></script>
+    <script src="/scripts/angular-route.min.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/customer.app.js"></script>
+    <script src="/app/controller/cutomer.controller.js"></script>
+    <script src="/app/controller/orders.controller.js"></script>
+    <script src= "app/service/customerFactory.js"></script>
+    
+
+        
+    
+    </body>
+</html>
