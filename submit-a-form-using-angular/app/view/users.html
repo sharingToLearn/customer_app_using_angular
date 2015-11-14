@@ -1,0 +1,30 @@
+  <h2>Users</h2>
+
+  <table class="table table-striped">
+      <th>#ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <tr ng-repeat="user in users.user">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+  </table>
+
+
+<form class="form-inline" ng-submit="addUser()">    
+   <div class="form-group">
+    <input type="text" class="form-control" id="userId" ng-model="userId" placeholder="Id">
+    </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="name" ng-model="name" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" id="email" ng-model="email" placeholder="email">
+  </div>
+  <button type="submit" class="btn btn-default">Add User</button>
+  <button type="button" class="btn btn-default" ng-click="getUsers()">Load Users</button>
+</form>
+
+
+             
