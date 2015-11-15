@@ -1,6 +1,27 @@
-  <h2>Users</h2>
+<div class="panel panel-primary">
+ 
+  <div class="panel-heading">{{headerTitle}}</div>
+  <div class="panel-body">
+    <p>List out all the users and add users.</p>
+      
+      <form class="form-inline" ng-submit="addUser()">    
+               <div class="form-group">
+                <input type="text" class="form-control" id="userId" ng-model="userId" ng-minlength="3" 
+                ng-maxlength="8" required placeholder="Id">
+                </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="name" ng-model="name" ng-minlength="3" 
+                ng-maxlength="100" required placeholder="Name">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" ng-model="email" placeholder="Email">
+              </div>
+              <button type="submit" class="btn btn-primary">Add User</button>
+              <button type="button" class="btn btn-primary" ng-click="getUsers()">Load Users</button>
+      </form>
 
-  <table class="table table-striped">
+  </div>
+ <table class="table table-striped">
       <th>#ID</th>
       <th>Name</th>
       <th>Email</th>
@@ -10,21 +31,12 @@
         <td>{{user.email}}</td>
       </tr>
   </table>
+</div>
 
 
-<form class="form-inline" ng-submit="addUser()">    
-   <div class="form-group">
-    <input type="text" class="form-control" id="userId" ng-model="userId" placeholder="Id">
-    </div>
-  <div class="form-group">
-    <input type="text" class="form-control" id="name" ng-model="name" placeholder="Name">
-  </div>
-  <div class="form-group">
-    <input type="email" class="form-control" id="email" ng-model="email" placeholder="email">
-  </div>
-  <button type="submit" class="btn btn-default">Add User</button>
-  <button type="button" class="btn btn-default" ng-click="getUsers()">Load Users</button>
-</form>
+  
+
+
 
 
              

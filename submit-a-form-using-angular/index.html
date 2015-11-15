@@ -8,9 +8,21 @@
     </head>
     
     <body>
-   
         <div class="container-fluid">
-           <ng-view></ng-view>
+            <div class="row">
+                <div class="col-md-2">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li role="presentation"><a href="#/">User</a></li>
+                        <li role="presentation"><a href="#/upload">File Upload</a></li>
+                        <li role="presentation"><a href="#">Messages</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-10">
+                    <ng-view></ng-view>
+                </div>
+                
+            </div>
+           
      </div>
     
     <script src="/scripts/angular.min.js"></script>
@@ -20,6 +32,9 @@
     <script src="/app/users.app.js"></script>
     <script src="/app/controller/users.controller.js"></script>
     <script src= "/app/service/users.factory.js"></script>
+    <script src= "/app/controller/flie.upload.controller.js"></script>  
+    <script src="/app/directives/panelDirective.js"></script>
+    <script src="/scripts/angular.messages.js"></script>
     
 
         

@@ -1,0 +1,46 @@
+<div class="panel panel-primary">
+ 
+  <div class="panel-heading">{{headerTitle}}</div>
+  <div class="panel-body">
+    <p>Upload a Java File</p>
+      
+
+      <form>
+          <div class="form-group">
+            <label for="exampleInputFile">Choose a files with .java extension</label>
+           
+
+              <label for="file-upload" class="btn btn-primary">
+                <span class="glyphicon glyphicon-upload"></span> Upload File
+              </label>
+           <input type="file" id="file-upload" onchange="angular.element(this).scope().filesChanged(this)" multiple />  
+            <!--<p class="help-block">Example block-level help text here.</p>-->
+              <button type="submit" class="btn btn-primary" ng-click="upload()">Submit</button>
+          </div>
+            
+      </form>
+      
+  </div>
+    <table class="table table-striped">
+      <th>File Name</th>
+      <th>File Size</th>
+      <th>Last Modified On </th>
+      <th>Lines Of Code</th>    
+      <tr ng-repeat="file in files">
+          <td>{{file.name}}</td>
+          <td>{{file.size}}</td>
+          <td>{{file.lastModifiedDate | date : format : timezone}}</td>
+          <td>{{linesOfCode}}</td>
+      </tr>
+  </table>
+    
+
+</div>
+
+
+  
+
+
+
+
+             

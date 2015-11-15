@@ -4,6 +4,7 @@
     var UsersDataController =  function($scope, $log, usersFactory, $http){
         
         $scope.users = [];
+        $scope.headerTitle='User Management';
         
         // Add a User
         $scope.addUser = function createUser(){
@@ -21,21 +22,23 @@
         }
         
         //Get All Users
-        $scope.getUsers = function getAllUsers(){
-          usersFactory.getAllUsers()
-                .success(function(users){
-                    console.log('Getting all Users ');
-                    console.log(users);
-                    $scope.users=users;
-                })
-                .error(function(data,status){
-                    $log.log(data);
-                    $log.log(status); 
-                });
-        }
+            var getAllUsers = function getAllUsers(){
+                  usersFactory.getAllUsers()
+                        .success(function(users){
+                            console.log('Getting all Users ');
+                            console.log(users);
+                            $scope.users=users;
+                        })
+                        .error(function(data,status){
+                            $log.log(data);
+                            $log.log(status); 
+                        });
+                };
+
+            $scope.getUsers = getAllUsers;
         
-        
-        
+            getAllUsers();
+           
     };
     
     angular.module('usersModule').controller('UsersDataController', UsersDataController);
